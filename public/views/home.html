@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestione d'entreprise</title>
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+
+</head>
+
+<body>
+
+    <!-- navbar -->
+
+    <nav class="navbar bg-light navbar-light mb-3" style="box-shadow:#ddd 1px 1px 1px;">
+        <a class="navbar-brand mr-auto" href="/">
+            <img src="../img/LOGO.png" alt="E-cms" style="width:80px;">
+        </a>
+        <div class="form-inline">
+
+            <!-- Search-bar -->
+            <div style="position: relative;" class="mr-2 bar">
+                <input onkeyup="searchSalary(event,this)" class="form-control search" style="border-radius: 30px; ;"
+                    type="text" placeholder="chercher un salarié">
+                <div style="display: inline-block; position: absolute; right: 10px; bottom: 8px;">
+                    <i class="fa fa-search" style="font-size:20px; color: #333;"></i>
+                </div>
+            </div>
+            <a type="button" class="btn btn-success"
+                onclick="document.getElementById('loginModal').style.display='block'">
+                Se Connecter
+            </a>
+        </div>
+    </nav>
+    <!-- login Modal -->
+    <div class="modal" role="dialog" id="loginModal">
+        <div class="modal-dialog">
+            <div class="modal-content mx-auto">
+                <div class="modal-header">
+                    <h3 class="modal-title">Login</h3>
+                    <button type="button" class="close" data-dismiss="modal"
+                        onclick="document.getElementById('loginModal').style.display='none'">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" id="name" name="username" class="form-control" placeholder="Username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="pass" name="password" class="form-control" placeholder="Password">
+                    </div>
+                    <div id="alert" class="alert alert-warning" style="display:none;">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success"
+                        onclick="document.getElementById('registerModal').style.display='block' ,document.getElementById('loginModal').style.display='none'">
+                        Register </button>
+                    <button type="submit" id="but_submit" class="btn btn-success"> Login </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- register modal  -->
+    <div class="modal" role="dialog" id="registerModal">
+        <div class="modal-dialog">
+            <div class="modal-content mx-auto">
+                <div class="modal-header">
+                    <h3 class="modal-title">Sign-up</h3>
+                    <button type="button" class="close" data-dismiss="modal"
+                        onclick="document.getElementById('registerModal').style.display='none'">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" id="emailR" name="emailR" class="form-control" placeholder="email">
+                    </div>
+                    <div class="form-group">
+                        <input type="text" id="nameR" name="usernameR" class="form-control" placeholder="username">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="passR" name="passwordR" class="form-control" placeholder="Password">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" id="confpass" name="passwordConfirm" class="form-control"
+                            placeholder="Confirmer votre password">
+                    </div>
+                    <div id="alertR" class="alert alert-warning" style="display:none;">
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-success"
+                        onclick="document.getElementById('registerModal').style.display='none' ,document.getElementById('loginModal').style.display='block'">
+                        Login </button>
+                    <button type="submit" id="but_submit2" class="btn btn-success"> Register </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- image d'acceuli -->
+    <div class=" card  container-fluid p-5">
+        <img src="../img/accueil-1.jpg" alt="" class=" card-img">
+        <div class="card-img-overlay">
+            <h1 class="card-title text-center font-weight-bold text-muted mt-5 ">Planifiez vos succès</h5>
+                <p class="card-text text-center font-italic text-primary"> Optimisez votre gestion de personnel et
+                    libérez
+                    votre emploi
+                    du temps.
+                </p>
+
+        </div>
+    </div>
+
+
+    <!-- les deux card image  -->
+    <div class="card-group mt-3">
+        <div class="card">
+            <img class="w-100 h-100" src="../img/slider1.png" alt="">
+        </div>
+        <div class="card">
+            <img class="w-100 h-100" src="../img/slider2.jpg" alt="">
+        </div>
+
+    </div>
+
+
+    <!-- footer -->
+    <div class="footer">
+        Tous droits réservés &copy; 2020
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+        </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+        </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+        </script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js"></script>
+    <script type="text/javascript" src="../js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.js"></script>
+    <script src="../js/signup.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/script.js"></script>
+
+
+</body>
